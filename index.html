@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Surprise</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: pink;
+            margin: 0;
+        }
+        .heart {
+            width: 200px; /* Increased size */
+            height: 200px; /* Increased size */
+            background-color: red;
+            position: relative;
+            transform: rotate(-45deg);
+            animation: beat 1s infinite alternate;
+        }
+        .heart::before,
+        .heart::after {
+            content: '';
+            width: 200px; /* Increased size */
+            height: 200px; /* Increased size */
+            background-color: red;
+            border-radius: 50%;
+            position: absolute;
+        }
+        .heart::before {
+            top: -100px; /* Adjusted position */
+            left: 0;
+        }
+        .heart::after {
+            left: 100px; /* Adjusted position */
+            top: 0;
+        }
+        @keyframes beat {
+            0% {
+                transform: scale(1) rotate(-45deg);
+            }
+            100% {
+                transform: scale(1.2) rotate(-45deg);
+            }
+        }
+        .heart-container {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="heart-container" onclick="openWebsite()">
+        <div class="heart"></div>
+    </div>
+
+    <script>
+        function openWebsite() {
+            window.location.href = 'main.html';
+        }
+    </script>
+</body>
+</html>
